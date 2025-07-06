@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+  <title>Car Tuning Show RD</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside id="sidebar">
+    <h2>Categorías</h2>
+    <ul>
+      <li><a href="jdm.html">JDM</a></li>
+      <li><a href="euro.html">Euro</a></li>
+      <li><a href="muscle.html">Muscle</a></li>
+      <li><a href="suv.html">SUV</a></li>
+    </ul>
+  </aside>
+
+  <div class="contenedor-principal">
+    <main class="contenido">
+      <header>
+        <img  src="image/logo3.png" alt="Logo Car Tuning Show RD" class="logo-header" /> 
+        <h1>Car Tuning Show RD</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li>
+  <select id="selector-galeria" class="selector-galeria">
+    <option disabled selected>Galería</option>
+    <option value="jdm.html">JDM</option>
+    <option value="euro.html">Euro</option>
+    <option value="muscle.html">Muscle</option>
+    <option value="suv.html">SUV</option>
+  </select>
+</li>
+            <li><a href="#">Reseñas</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+
+
+<!-- Carrusel de Auto de la Semana -->
+<section id="auto-semana" class="carrusel-contenedor">
+  <h2 id="titulo-auto-semana" style="cursor:pointer;">Auto de la Semana</h2>
+  <div class="fila-carrusel">
+    <div class="slider-container">
+      <button class="slider-btn prev" aria-label="Anterior">&#10094;</button>
+      <div class="slide-track" id="slide-track">
+        <!-- Se cargan aquí -->
+      </div>
+      <button class="slider-btn next" aria-label="Siguiente">&#10095;</button>
+    </div>
+
+    <aside class="noticias-derecha">
+      <h3>📰 Noticias</h3>
+      <div id="contenedor-noticias"></div>
+    </aside>
+  </div>
+</section>
+
+   
+
+
+      <!-- Galería de Autos -->
+      <section class="galeria-autos">
+        <h2>🚗 Galería de Autos</h2>
+        <div class="galeria-grid" id="galeria-autos">
+          <!-- Se carga desde JS -->
+        </div>
+      </section>
+
+      <!-- Modal del Auto (Artículo) -->
+      <div class="modal" id="modalArticulo">
+        <div class="modal-contenido">
+          <span class="cerrar" id="cerrarModalArticulo">&times;</span>
+          <div id="contenidoModalArticulo"></div>
+        </div>
+      </div>
+
+      <!-- Modal Galería ÚNICO -->
+   <div id="modal-auto" class="modal">
+  <div class="modal-content">
+    <span id="modal-cerrar">&times;</span>
+    <h2 id="modal-titulo"></h2>
+    <div id="modal-imagenes"></div>
+    <p id="modal-descripcion"></p>
+  </div>
+</div>
+
+
+      <!-- Eventos dinámicos -->
+      <section class="eventos">
+        <h2>📅 Evento de la Semana</h2>
+        <div class="eventos-slider-wrapper">
+          <button class="evento-btn prev" onclick="moverEvento(-1)">&#10094;</button>
+          <div class="eventos-slider" id="contenedor-eventos">
+            <!-- Se carga desde JS -->
+          </div>
+          <button class="evento-btn next" onclick="moverEvento(1)">&#10095;</button>
+        </div>
+      </section>
+ 
+
+      <!-- Modal Evento -->
+   <div id="modalEvento" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" id="cerrarModalEvento">&times;</span>
+    <div id="contenidoModalEvento"></div>
+  </div>
+</div>
+  
+<!-- Modal Auto de la Semana -->
+<div id="modal-auto-semana" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar-modal">&times;</span>
+    <h2 id="modal-titulo"></h2>
+    <p id="modal-descripcion"></p>
+    <div id="modal-imagenes"></div>
+  </div>
+</div>
+
+<div id="modalArticulo" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" id="cerrarModalArticulo">&times;</span>
+    <div id="contenidoModalArticulo"></div>
+  </div>
+</div>
+
+    </main>
+
+    <footer>
+      <h3>Síguenos</h3>
+      <div class="redes-sociales">
+      <!---- <a href="https://www.facebook.com/share/19KuQNcecp/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/gilberto2102?igsh=MTJtNGw5cDI2c2pvYQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@gilbertoencarnaci6?_t=ZS-8xN5RBHB4gy&_r=1"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.link/mhui5a"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtube.com/@lerebuild?si=Jgy1C17jXiiRhEHe"><i class="fab fa-youtube"></i></a>-->
+      </div>
+      <p>&copy; 2025 Tuning Show RD</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+   
+  <script defer src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JDM - Tuning Show RD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="galeria.css" />
+</head>
+<body>
+  <aside id="sidebar">
+    <h2>Marcas JDM</h2>
+    <ul>
+      <li><button class="filtro-marca" data-marca="todos">Todos</button></li>
+      <li><button class="filtro-marca" data-marca="honda">Honda</button></li>
+      <li><button class="filtro-marca" data-marca="toyota">Toyota</button></li>
+      <li><button class="filtro-marca" data-marca="mitsubishi">Mitsubishi</button></li>
+      <li><button class="filtro-marca" data-marca="subaru">Subaru</button></li>
+      <li><button class="filtro-marca" data-marca="nissan">Nissan</button></li>
+      <li><button class="filtro-marca" data-marca="mazda">Mazda</button></li>
+    </ul>
+  </aside>
+
+  <main class="contenido">
+    <header>
+      <img src="image/logo3.png" alt="Logo Car Tuning Show RD" class="logo-header"/>
+      <h1>Autos JDM</h1>
+      <nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li>
+  <select id="selector-galeria" class="selector-galeria">
+    <option value="" selected hidden>Galería</option>
+    <option value="jdm.html">JDM</option>
+    <option value="euro.html">Euro</option>
+    <option value="muscle.html">Muscle</option>
+    <option value="suv.html">SUV</option>
+  </select>
+</li>
+    <li><a href="#">Reseñas</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+</nav>
+    </header>
+<h2 id="titulo-categoria" class="titulo-categoria"></h2>
+    <!-- Galería dinámica desde JS -->
+    <section id="contenedor-autos-subpagina" class="galeria-central">
+      <!-- Aquí se insertan las tarjetas desde galeria.js -->
+    </section>
+  </main>
+
+  <footer>
+    <h3>Síguenos</h3>
+    <div class="redes-sociales">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/gilberto2102"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@gilbertoencarnaci6"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.link/mhui5a"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 Tuning Show RD</p>
+  </footer>
+
+  <!-- Modal con galería de imágenes -->
+
+<!-- Modal Galería -->
+  <div id="img-overlay" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar-modal">&times;</span>
+      <!-- Se insertan los botones automáticamente con JS -->
+      <div class="galeria-extra"></div>
+      <img class="img-principal-modal" alt="Imagen ampliada" />
+      <div class="info-extra"></div>
+    </div>
+  </div>
+  <script defer src="galeria.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel de Administración - Tuning Show RD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Header con logotipo -->
+    <header>
+      <img src="image/logo3.png" alt="Logo Car Tuning Show RD" />
+      <h1>Panel de Administración</h1>
+    </header>
+<div id="alertaGlobal" class="alerta-evento" style="display:none"></div>
+    <!-- Formulario para autos principales -->
+    <section>
+      <h2>Agregar Auto a la Galería Principal</h2>
+      <form id="form-auto-main" action="/autos" method="POST" enctype="multipart/form-data">
+        <label for="modelo-main">Modelo:</label>
+        <input type="text" id="modelo-main" name="modelo" required />
+
+        <label for="descripcion-main">Descripción breve:</label>
+        <textarea id="descripcion-main" name="descripcion" required></textarea>
+
+        <label for="articulo-main">Artículo (detalle extra para modal):</label>
+        <textarea id="articulo-main" name="articulo" placeholder="Detalles ampliados del auto..."></textarea>
+
+        <label for="imagenes-main">Imágenes del auto:</label>
+        <input type="file" id="imagenes-main" name="imagenes" accept="image/*" multiple required />
+
+        <button type="submit">Guardar Auto</button>
+      </form>
+    </section>
+
+    <!-- Formulario para autos (subpáginas) -->
+<section>
+  <form id="form-auto-subpaginas" enctype="multipart/form-data">
+    <h2>Agregar carro a subpáginas</h2>
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo" name="modelo" required />
+
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" name="descripcion" required></textarea>
+
+    <label for="marca">Marca:</label>
+    <select id="marca" name="marca" required>
+      <option value="">Selecciona una marca</option>
+      <option value="todos">Todos</option>
+      <option value="honda">Honda</option>
+      <option value="toyota">Toyota</option>
+      <option value="mitsubishi">Mitsubishi</option>
+      <option value="subaru">Subaru</option>
+      <option value="nissan">Nissan</option>
+      <option value="mazda">Mazda</option>
+      <option value="bmw">Bmw</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+      <option value="vw">Volkswagen</option>
+      <option value="chevrolet">Chevrolet</option>
+      <option value="dodge">Dodge</option>
+      <option value="plymouth">Plymouth</option>
+      <option value="pontiac">Pontiac</option>
+      <option value="ford">Ford</option>
+    </select>
+
+    <label for="categoria_pagina">Subpágina:</label>
+    <select id="categoria_pagina" name="categoria_pagina" required>
+      <option value="">Selecciona una subpágina</option>
+      <option value="jdm">JDM</option>
+      <option value="euro">Euro</option>
+      <option value="muscle">Muscle</option>
+      <option value="suv">SUV</option>
+    </select>
+
+    <label for="articulo">Artículo (opcional):</label>
+    <textarea id="articulo" name="articulo"></textarea>
+
+    <label for="imagenes">Imágenes (múltiples):</label>
+    <input type="file" id="imagenes" name="imagenes" multiple required />
+
+    <button type="submit">Guardar Auto</button>
+  </form>
+  <div id="mensaje"></div>
+</section>
+  
+
+    <!-- Formulario para noticias -->
+    <section>
+      <h2>Agregar Noticia</h2>
+      <form id="form-noticia" action="/noticias" method="POST">
+        <label for="titulo-noticia">Título:</label>
+        <input type="text" id="titulo-noticia" name="titulo" required />
+
+        <label for="contenido-noticia">Contenido:</label>
+        <textarea id="contenido-noticia" name="contenido" required></textarea>
+
+        <button type="submit">Guardar Noticia</button>
+      </form>
+    </section>
+
+    <!-- Formulario para eventos -->
+
+  <section>
+  <h2>Agregar Evento</h2>
+  <form id="formEvento" enctype="multipart/form-data">
+    <label for="titulo-evento">Título:</label>
+    <input type="text" id="titulo-evento" name="titulo" required />
+
+    <label for="descripcion-evento">Descripción corta:</label>
+    <textarea id="descripcion-evento" name="descripcion" required></textarea>
+
+    <label for="imagen-evento">Imagen:</label>
+    <input type="file" id="imagen-evento" name="imagen" accept="image/*" required />
+
+    <label for="detalle-evento">Detalle completo:</label>
+    <textarea id="detalle-evento" name="detalle" required></textarea>
+
+    <button type="submit">Guardar Evento</button>
+  </form>
+</section>
+
+  <section>
+  <form id="form-carrusel" method="POST" enctype="multipart/form-data">
+    <h2>Editar Auto del Carrusel</h2>
+
+    <label for="titulo">Título:</label><br />
+    <input type="text" id="titulo" name="titulo" required /><br />
+
+    <label for="descripcion">Descripción:</label><br />
+    <textarea id="descripcion" name="descripcion" rows="3" required></textarea><br />
+
+    <label for="imagenes">Imágenes (puedes seleccionar varias):</label><br />
+    <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple /><br /><br />
+
+    <button type="submit">Guardar Cambios</button>
+  </form>
+
+  <div id="mensaje-carrusel"></div>
+</section> <!-- Formulario para agregar al carrusel -->
+
+
+
+
+    <!-- Sección para eliminar elementos -->
+    <section>
+      <h2>Eliminar elemento</h2>
+      <label for="select-tipo">Selecciona tipo:</label>
+      <select id="select-tipo">
+        <option value="">Selecciona tipo</option>
+        <option value="autos">Autos</option>
+        <option value="noticias">Noticias</option>
+        <option value="eventos">Eventos</option>
+      </select>
+
+      <label for="select-id">Selecciona ID:</label>
+      <select id="select-id">
+        <option value="">Selecciona ID</option>
+      </select>
+
+      <button id="btn-eliminar">Eliminar</button>
+    </section>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
